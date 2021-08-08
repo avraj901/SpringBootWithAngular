@@ -3,6 +3,7 @@ package com.project.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.project.model.Customer;
@@ -18,5 +19,13 @@ public class CustomerService {
 		
 		System.out.println("CustomerService.findByName"+name);
 		return customerRepository.findByLastName(name);
+	}
+
+	public void insertCustomerDetails(Customer customer) {
+		
+		
+       	customerRepository.save(customer);
+		
+		
 	}
 }

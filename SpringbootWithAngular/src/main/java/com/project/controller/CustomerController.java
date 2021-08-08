@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,5 +26,11 @@ public class CustomerController {
 		
 		System.out.println("name ::"+name);
 		return customerService.findByName(name);
+	}
+	
+	@RequestMapping(value="/save", method = RequestMethod.POST)
+	public void saveCustomerData(@RequestBody Customer customer) {
+		
+		customerService.insertCustomerDetails(customer);
 	}
 }
