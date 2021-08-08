@@ -33,4 +33,10 @@ public class CustomerController {
 		
 		customerService.insertCustomerDetails(customer);
 	}
+	
+	@RequestMapping(value="delete/{id}", method = RequestMethod.DELETE)
+	public void removeCustomerDetails(@PathVariable long id) {
+		
+		customerService.removeCustomerDetails(id);
+	}
 }
