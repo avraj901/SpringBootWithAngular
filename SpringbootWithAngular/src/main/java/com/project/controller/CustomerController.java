@@ -39,4 +39,9 @@ public class CustomerController {
 		
 		customerService.removeCustomerDetails(id);
 	}
+	@RequestMapping(value="/update", method = RequestMethod.PUT)
+	public void updateCustomerDetails(@RequestBody Customer customer) {
+		
+		customerService.updateCustomerDetails(customer);
+	}
 }
