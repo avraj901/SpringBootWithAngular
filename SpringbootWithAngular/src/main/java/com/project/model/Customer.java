@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Customer {
 
 	@Id
-	private int Id;
+	private long Id;
 	@Column(name="last_name")
 	private String lastName;
 	@Column(name="first_name")
@@ -17,10 +17,10 @@ public class Customer {
 	@Column(name="age")
 	private int age;
 	
-	public int getId() {
+	public long getId() {
 		return Id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		Id = id;
 	}
 	public String getLastName() {

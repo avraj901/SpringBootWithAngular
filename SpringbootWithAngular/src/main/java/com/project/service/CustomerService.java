@@ -28,4 +28,16 @@ public class CustomerService {
 		
 		
 	}
+
+	public void deleteCustomerDetails(long id) {
+
+		customerRepository.deleteById(id);
+	}
+
+	public void updateCustomerDetails(Customer customer) {
+
+		customerRepository.save(customer);
+	}
+
+	
 }

@@ -33,4 +33,17 @@ public class CustomerController {
 		
 		customerService.insertCustomerDetails(customer);
 	}
+	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+	public void deleteCustomerService(@PathVariable long id) {
+		
+		customerService.deleteCustomerDetails(id);
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
+	public void updateCustomerDetails(@RequestBody Customer customer) {
+		
+		customerService.updateCustomerDetails(customer);
+	}
+	
 }
